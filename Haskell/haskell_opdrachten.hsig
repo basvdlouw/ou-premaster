@@ -1,0 +1,45 @@
+-- 1A: som :: Integer -> Integer -> Integer
+-- 1B: som 3 :: Integer -> Integer
+-- 1C: som 3 2 :: Integer
+
+-- 2A gecurryd
+gemiddelde :: Float -> Float -> Float 
+gemiddelde x y = (x+y)/2
+
+-- 2B niet gecurryd
+gemiddelde2 :: (Float, Float) -> Float 
+gemiddelde2 (x, y) = (x+y)/2
+
+-- 3A
+oneven :: Int -> Bool 
+oneven = (.) not even
+
+-- 3b: [True, False, True, False]
+
+-- 3c: foldr (+) 3 [1, 2, 3] = 1 + foldr (+) 3 + [2, 3]
+-- = 1 + (2 + foldr (+) 3 + [3])
+-- = 1 + (2 + (3 + (3 + foldr(+) 3 + []))
+-- = 1 + (2 + (3 + 3)) = 9
+
+-- 4A [[Int]]
+-- [[1, 2], [3, 4]]
+
+-- 4B 
+data Lijst a = Leeg | El a (Lijst a)
+-- El "De" (El "Auto" Leeg)
+
+--5A 
+neem :: Integer -> [a] -> [a]
+neem n xs | n == 1 = head xs | otherwise = head xs : neem (n-1) tail xs
+
+--5B
+neem' :: Integer -> [a] -> [a]
+neem' 1 xs = head xs
+neem' n xs = head xs : neem (n-1) tail xs 
+
+-- 6a Als xs een lengte van 0 heeft dan wordt de lege lijst teruggegeven.
+-- Verder wordt functie f op ieder element van xs uitgevoerd. Wanneer f True teruggeeft wordt dit element teruggegeven.
+-- Wanneer f False teruggeeft wordt dit element niet gereturned. 
+-- De functie "test" voert dus de functie f uit op ieder element van xs en returned de elementen waar op de functie f "true" returned.
+
+-- 6b test :: (a -> Bool) -> [a] -> [a] 

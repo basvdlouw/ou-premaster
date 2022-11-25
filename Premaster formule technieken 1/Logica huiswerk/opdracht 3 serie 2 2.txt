@@ -1,0 +1,9 @@
+3a
+
+∀x(∃y∃z(Rxy ∧ Rxz ∧ ¬y = z) → (∀y'(Rxy' → (y' = y ∨ y' = z))))
+
+b
+∃x∃y∃z∃z'((Rxy ∧ Ryz ∧ Ryz' ∧ Rzz') → ∀x'(Rxx' → x' = y))
+
+c
+(∀x(∃y∃z(Rxy ∧ Rxz ∧ ¬y = z))) ∧ (∃x∃y∃z∃z'(Rxy ∧ Rxz ∧ Rxz'))
